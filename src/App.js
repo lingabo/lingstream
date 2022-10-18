@@ -1,24 +1,52 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
 
+import React, { useState, useEffect } from "react";
+
+import { gapi } from "gapi-script";
+import Login from "./component/Login";
+
+import Home from "./component/Home";
+import { Routes, Route } from "react-router-dom";
+import { Videosall } from "./component/Videosall";
+
+//AIzaSyDfeBZeHkXcARr4-0j5cSforPdmwdVMoz8 Apikey
 function App() {
+  // const [profile, setProfile] = useState([]);
+  // const clientId =
+  //   "434501052002-0ra8d1qvse4bld75lch1jluo3sku62er.apps.googleusercontent.com";
+  // useEffect(() => {
+  //   const initClient = () => {
+  //     gapi.client.init({
+  //       clientId: clientId,
+  //       scope: "",
+  //     });
+  //   };
+  //   gapi.load("client:auth2", initClient);
+  // });
+
+  // const onSuccess = (res) => {
+  //   setProfile(res.profileObj);
+  // };
+
+  // const onFailure = (err) => {
+  //   console.log("failed", err);
+  // };
+
+  // const logOut = () => {
+  //   setProfile(null);
+  // };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <div>
+        <Routes>
+          <Route path="/" element={<Login />} />
+          <Route path="/dashbord" element={<Home />} />
+          <Route path="/abonnement" element={<Videosall />} />
+          <Route path="/home" element={<Home />} />
+        </Routes>
+      </div>
+    </>
   );
 }
 
