@@ -244,7 +244,23 @@ nav .logo.space{
   color: rgb(39, 49, 181);
   padding: 0 5px 0 0;
 }
+.padd {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  position: relative;
+  top: 50px;
+  
 
+
+}
+
+.centerVideo{
+  display: flex;
+  justify-content: center;
+  padding: 30px;
+}
 .circle{
   width: 30px;
   border-radius: 60px;

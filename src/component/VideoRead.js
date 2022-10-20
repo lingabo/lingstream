@@ -11,7 +11,7 @@ export function VideoRead(){
        <div>
          <Navbar />
         
-         <div className="video__lecture" /* key={videos.id} */>
+         <div className="container centerVideo" /* key={videos.id} */>
            <iframe
              width="560"
              height="315"

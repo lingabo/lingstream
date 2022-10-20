@@ -21,14 +21,14 @@ const Channels = () => {
          .then((res) => res.json())
          .then((data) => setVideos(data.items))
    }, [])
-   console.log('videos abonnées : ', videos)
+   console.log('videxos abonnées : ', videos)
    return (
       <>
          <div>
             <Navbar />
             
             <div>
-               <div className="grid_sidebar_searchbar">
+               <div className="container">
                   <div className="main_side">
                      <div className="image__preview image__container">
                         {videos.map((item, id) => {
@@ -37,7 +37,7 @@ const Channels = () => {
                              <Link
                                className="video__link__style"
                                to={`/chanelVideosPage/${channelId}`}
-                               /* to={`/videoplay/${item.id}`} */
+                               
                                key={id}
                              >
                                <Channelvideo key={id} video={item} />
