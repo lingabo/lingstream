@@ -16,12 +16,12 @@ function Navbar(props) {
             <li>
               <Link to={"/home"}>Accueil</Link>
             </li>
-            <li>
+            {/* <li>
               <Link to={"/abonnement"}>Abonnement</Link>
-            </li>
+            </li> */}
 
             <li>
-              <Link to={"/channel"}>channel</Link>
+              <Link to={"/channel"}>Abonnement</Link>
             </li>
           </div>
 

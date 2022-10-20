@@ -45,7 +45,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Login />} />
           <Route path="/dashbord" element={<Home />} />
-          <Route path="/abonnement" element={<Videosall />} />
+          {/* <Route path="/abonnement" element={<Videosall />} /> */}
           <Route path="/home" element={<Home />} />
           <Route path="/channel" element={<Channels />} />
          
