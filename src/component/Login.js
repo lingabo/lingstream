@@ -13,7 +13,7 @@ function Login() {
     const initClient = () => {
       gapi.client.init({
         clientId: clientId,
-        scope: "",
+        scope:"https://www.googleapis.com/auth/youtube.readonly",
       });
     };
     gapi.load("client:auth2", initClient);
@@ -21,7 +21,16 @@ function Login() {
 
   const navigate = useNavigate();
   const onSuccess = (res) => {
-    setProfile(res.profileObj);
+    console.log(res);
+    const accessToken = res.accessToken;
+    localStorage.setItem('token', accessToken);
+
+    const images = res.profileObj["imageUrl"];
+    localStorage.setItem("images", images);
+
+    console.log("token : ", accessToken);
+
+    /* setProfile(res.profileObj); */
     navigate("/dashbord");
   };
 
@@ -31,6 +40,7 @@ function Login() {
         <h1 className="text">Lingstream</h1>
         <img src={logo} alt="LingSt-Logo" className="logo" />
         <p>Une application qui vous permet de faire du streaming</p>
+    <div id="login">
 
         <GoogleLogin
           clientId="434501052002-0ra8d1qvse4bld75lch1jluo3sku62er.apps.googleusercontent.com"
@@ -39,6 +49,7 @@ function Login() {
           cookiePolicy={"single_host_origin"}
           isSignedIn={false}
         />
+    </div>
       </div>
     </div>
   );

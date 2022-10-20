@@ -8,6 +8,9 @@ import Login from "./component/Login";
 import Home from "./component/Home";
 import { Routes, Route } from "react-router-dom";
 import { Videosall } from "./component/Videosall";
+import { Videochanel } from "./component/Videochanel";
+import Channels from "./component/Channels";
+import { VideoRead } from "./component/VideoRead";
 
 //AIzaSyDfeBZeHkXcARr4-0j5cSforPdmwdVMoz8 Apikey
 function App() {
@@ -44,6 +47,9 @@ function App() {
           <Route path="/dashbord" element={<Home />} />
           <Route path="/abonnement" element={<Videosall />} />
           <Route path="/home" element={<Home />} />
+          <Route path="/channel" element={<Channels />} />
+         
+          <Route path="/videoplay/:id" element={<VideoRead />} />
         </Routes>
       </div>
     </>
