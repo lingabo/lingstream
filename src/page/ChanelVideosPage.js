@@ -1,12 +1,23 @@
 import React from "react";
-import ChannelCardVideos from "../components/ChannelCardVideos";
+import ChannelCardVideos from "../component/ChannelCardVideos";
+import Navbar from "../component/Navbar";
 
-const ChanelVideosPage = () => {
+
+const ChanelVideosPage = () => { 
   return (
-    <div>
-      <ChannelCardVideos />
-    </div>
+    <>
+      <div>
+        <Navbar />
+      </div>
+
+      <div className="container">
+
+   
+        <ChannelCardVideos />
+      
+      </div>
+    </>
   );
-};
+}
 
 export default ChanelVideosPage;

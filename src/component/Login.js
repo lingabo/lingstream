@@ -24,15 +24,20 @@ function Login() {
     console.log(res);
     const accessToken = res.accessToken;
     localStorage.setItem('token', accessToken);
-
     const images = res.profileObj["imageUrl"];
     localStorage.setItem("images", images);
-
     console.log("token : ", accessToken);
 
     /* setProfile(res.profileObj); */
     navigate("/dashbord");
   };
+
+  const accessToken = localStorage.getItem("token");
+  useEffect(() => {
+    if(!accessToken){
+      navigate("/");
+    }
+  }, [accessToken, navigate]);
 
   return (
     <div className="main">

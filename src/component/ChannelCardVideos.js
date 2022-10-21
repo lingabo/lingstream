@@ -3,7 +3,8 @@ import { useParams, Link } from "react-router-dom";
 import Navbar from "./Navbar";
 
 import { useState, useEffect } from "react";
-import Card from "./Card";
+
+import { Cardvideo } from "./Cardvideo";
 
 const ChannelCardVideos = () => {
 
@@ -27,30 +28,19 @@ const ChannelCardVideos = () => {
 
   console.log("videdos abonnées : ", video);
   return (
-    <div>
-      <Navbar />
-      
-      <div>
-        <div className="container">
-          <div className="main_side">
-            <div className="image__preview image__container">
-              {video.map(
-                (item, id) => (
-                  <Link
-                    className="video__link__style"
-                    to={`/chanelCardVideos/${item.id.videoId}`}
-                    key={id}
-                  >
-                    <Card key={id} video={item} />
-                  </Link>
-                )
-                /* } */
-              )}
-              
-            </div>
-          </div>
-        </div>
-      </div>
+    <div className="row row-cols-1 row-cols-sm-4 row-cols-md-4 justify-content-center">
+      {video.map(
+        (item, id) => (
+          <Link
+            className="video__link__style"
+            to={`/chanelCardVideos/${item.id.videoId}`}
+            key={id}
+          >
+            <Cardvideo key={id} video={item} />
+          </Link>
+        )
+        /* } */
+      )}
     </div>
   );
 };

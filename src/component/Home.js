@@ -27,6 +27,9 @@ function Home() {
       .then((res) => res.json())
       .then((data) => setVideos(data.items));
   }, []);
+
+
+  
   console.log("videos : ", videos);
   return (
     <>

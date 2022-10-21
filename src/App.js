@@ -10,6 +10,9 @@ import { Routes, Route } from "react-router-dom";
 import Channels from "./component/Channels";
 import { VideoRead } from "./component/VideoRead";
 import { Channelvideo } from "./component/Channelvideo";
+import Logout from "./component/Logout";
+import ChannelCardVideos from "./component/ChannelCardVideos";
+import ChanelVideosPage from "./page/ChanelVideosPage";
 
 //AIzaSyDfeBZeHkXcARr4-0j5cSforPdmwdVMoz8 Apikey
 function App() {
@@ -45,9 +48,14 @@ function App() {
           <Route path="/" element={<Login />} />
           <Route path="/dashbord" element={<Home />} />
           <Route path="/home" element={<Home />} />
+          <Route path="/logout" element={<Logout />} />
           <Route path="/channel" element={<Channels />} />
-          <Route path="/channel" element={<Channelvideo />} />
+
           <Route path="/videoplay/:id" element={<VideoRead />} />
+          
+          <Route path="/chanelVideosPage/:channelId"
+            element={<ChanelVideosPage />}
+          />
         </Routes>
       </div>
     </>
