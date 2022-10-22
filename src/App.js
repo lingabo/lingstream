@@ -2,45 +2,23 @@ import "./App.css";
 
 import React, { useState, useEffect } from "react";
 
-import { gapi } from "gapi-script";
+
 import Login from "./component/Login";
 
 import Home from "./component/Home";
 import { Routes, Route } from "react-router-dom";
 import Channels from "./component/Channels";
 import { VideoRead } from "./component/VideoRead";
-import { Channelvideo } from "./component/Channelvideo";
+
 import Logout from "./component/Logout";
-import ChannelCardVideos from "./component/ChannelCardVideos";
+  
 import ChanelVideosPage from "./page/ChanelVideosPage";
+import { LireChannelVideo } from "./component/LireChannelVideo";
+
 
 //AIzaSyDfeBZeHkXcARr4-0j5cSforPdmwdVMoz8 Apikey
 function App() {
-  // const [profile, setProfile] = useState([]);
-  // const clientId =
-  //   "434501052002-0ra8d1qvse4bld75lch1jluo3sku62er.apps.googleusercontent.com";
-  // useEffect(() => {
-  //   const initClient = () => {
-  //     gapi.client.init({
-  //       clientId: clientId,
-  //       scope: "",
-  //     });
-  //   };
-  //   gapi.load("client:auth2", initClient);
-  // });
-
-  // const onSuccess = (res) => {
-  //   setProfile(res.profileObj);
-  // };
-
-  // const onFailure = (err) => {
-  //   console.log("failed", err);
-  // };
-
-  // const logOut = () => {
-  //   setProfile(null);
-  // };
-
+  
   return (
     <>
       <div>
@@ -52,9 +30,15 @@ function App() {
           <Route path="/channel" element={<Channels />} />
 
           <Route path="/videoplay/:id" element={<VideoRead />} />
-          
-          <Route path="/chanelVideosPage/:channelId"
+
+          <Route
+            path="/chanelVideosPage/:channelId"
             element={<ChanelVideosPage />}
+          />
+
+          <Route
+            path="/chanelCardVideos/:videoId"
+            element={<LireChannelVideo />}
           />
         </Routes>
       </div>

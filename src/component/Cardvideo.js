@@ -1,5 +1,6 @@
 import React from "react";
 
+
 export function Cardvideo({video}){
 
 const chanelImage = localStorage.getItem('token');
@@ -16,6 +17,8 @@ return (
         <p className="video__title">{video?.snippet?.title}</p>
         
       </div>
+
+      
     </div>
   </div>
 );

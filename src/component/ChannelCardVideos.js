@@ -7,11 +7,9 @@ import { useState, useEffect } from "react";
 import { Cardvideo } from "./Cardvideo";
 
 const ChannelCardVideos = () => {
-
   const [video, setVideo] = useState([]);
   const { channelId } = useParams();
 
-  
   const key = "AIzaSyA82fnpCQ86CtAgV8qlgkgZdQtyI0mJfgU";
   const fecthData = `https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=${channelId}&type=video&maxResults=45&key=${key}`;
   const accessToken = localStorage.getItem("token");

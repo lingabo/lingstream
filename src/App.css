@@ -239,8 +239,8 @@ nav .logo.space {
   align-items: center;
   text-align: center;
   justify-content: center;
-
-  margin-top: 10px;
+  position: relative;
+  top: 100px;
 }
 .videochanel {
   display: flex;
@@ -254,7 +254,9 @@ nav .logo.space {
 .centerVideo {
   display: flex;
   justify-content: center;
-  padding: 30px;
+
+  position: relative;
+  top : 100px;
 }
 .circle {
   width: 30px;

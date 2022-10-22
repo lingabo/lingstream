@@ -6,7 +6,7 @@ import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 function Login() {
-  // const [profile, setProfile] = useState([]);
+  
   const clientId =
     "434501052002-0ra8d1qvse4bld75lch1jluo3sku62er.apps.googleusercontent.com";
   useEffect(() => {
@@ -28,7 +28,7 @@ function Login() {
     localStorage.setItem("images", images);
     console.log("token : ", accessToken);
 
-    /* setProfile(res.profileObj); */
+    
     navigate("/dashbord");
   };
 
