@@ -11,6 +11,7 @@ const ChannelCardVideos = () => {
   const { channelId } = useParams();
 
   const key = "AIzaSyA82fnpCQ86CtAgV8qlgkgZdQtyI0mJfgU";
+
   const fecthData = `https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=${channelId}&type=video&maxResults=45&key=${key}`;
   const accessToken = localStorage.getItem("token");
   console.log("Main component : ", accessToken);
@@ -19,6 +20,7 @@ const ChannelCardVideos = () => {
     fetch(fecthData, {
       method: "GET",
       headers: new Headers({ Authorization: `Bearer ${accessToken}` }),
+
     })
       .then((res) => res.json())
       .then((data) => setVideo(data.items));
@@ -27,11 +29,12 @@ const ChannelCardVideos = () => {
   console.log("videdos abonnées : ", video);
   return (
     <div className="row row-cols-1 row-cols-sm-4 row-cols-md-4 justify-content-center">
-      {video.map(
+      {video?.map(
         (item, id) => (
           <Link
             className="video__link__style"
-            to={`/chanelCardVideos/${item.id.videoId}`}
+            // to={`/chanelCardVideos/${item.id.videoId}`}
+            to={`/videoplay/${item.id.videoId}/${item?.snippet?.channelId}`}
             key={id}
           >
             <Cardvideo key={id} video={item} />

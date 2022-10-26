@@ -14,13 +14,13 @@ const Channels = () => {
    const accessToken = localStorage.getItem('token')
    console.log('Main component : ', accessToken)
    useEffect(() => {
-      fetch(fecthData, {
-         method: 'GET',
-         headers: new Headers({ Authorization: `Bearer ${accessToken}` }),
-      })
-         .then((res) => res.json())
-         .then((data) => setVideos(data.items))
-   }, [])
+     fetch(fecthData, {
+       method: "GET",
+       headers: new Headers({ Authorization: `Bearer ${accessToken}` }),
+     })
+       .then((res) => res.json())
+       .then((data) => setVideos(data.items));
+   }, [accessToken]);
    console.log('videxos abonnées : ', videos)
    return (
      <>

@@ -17,6 +17,8 @@ function Home() {
   console.log("Main component : ", accessToken);
 
   useEffect(() => {
+
+    
     fetch(fecthData, {
       method: "GET",
       headers: {
@@ -26,10 +28,9 @@ function Home() {
     })
       .then((res) => res.json())
       .then((data) => setVideos(data.items));
-  }, []);
+  }, [fecthData]);
 
 
-  
   console.log("videos : ", videos);
   return (
     <>

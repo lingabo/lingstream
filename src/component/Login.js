@@ -6,9 +6,10 @@ import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 function Login() {
-  
   const clientId =
     "434501052002-0ra8d1qvse4bld75lch1jluo3sku62er.apps.googleusercontent.com";
+  // const clientId3 =
+  //   "434501052002-0ra8d1qvse4bld75lch1jluo3sku62er.apps.googleusercontent.com";
   useEffect(() => {
     const initClient = () => {
       gapi.client.init({
@@ -45,16 +46,16 @@ function Login() {
         <h1 className="text">Lingstream</h1>
         <img src={logo} alt="LingSt-Logo" className="logo" />
         <p>Une application qui vous permet de faire du streaming</p>
-    <div id="login">
-
-        <GoogleLogin
-          clientId="434501052002-0ra8d1qvse4bld75lch1jluo3sku62er.apps.googleusercontent.com"
-          buttonText="Se connecter avec son compte Google"
-          onSuccess={onSuccess}
-          cookiePolicy={"single_host_origin"}
-          isSignedIn={false}
-        />
-    </div>
+        <div id="login">
+          {/* 861476027861-544a7k37qnckg7mnltohcl885b53nl0t.apps.googleusercontent.com */}
+          <GoogleLogin
+            clientId="861476027861-544a7k37qnckg7mnltohcl885b53nl0t.apps.googleusercontent.com"
+            buttonText="Se connecter avec son compte Google"
+            onSuccess={onSuccess}
+            cookiePolicy={"single_host_origin"}
+            isSignedIn={false}
+          />
+        </div>
       </div>
     </div>
   );
