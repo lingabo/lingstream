@@ -12,13 +12,8 @@ export function Searchlist(){
 
     return (
       <>
-        <div className="search-icon">
-          <span className="fas fa-search"></span>
-        </div>
-        <div className="cancel-icon">
-          <span className="fas fa-times"></span>
-        </div>
-        <div className="search">
+        
+        
           <form className="#">
             <input
               type="search"
@@ -31,7 +26,7 @@ export function Searchlist(){
               <button type="submit" className="fas fa-search"></button>
             </Link>
           </form>
-        </div>
+        
       </>
     );
 }

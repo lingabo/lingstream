@@ -26,7 +26,10 @@ body {
 .App {
   text-align: center;
 }
-
+.circle{
+  width: 30px;
+  border-radius: 50px;
+}
 .title {
   color: blue;
 }
@@ -54,6 +57,97 @@ body {
   width: 100%;
 }
 nav {
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 70px;
+}
+nav .logot {
+  color: rgb(54, 65, 184);
+  font-size: 30px;
+  font-weight: 600;
+  letter-spacing: -1px;
+}
+nav .nav-items {
+  display: flex;
+  flex: 1;
+  padding: 0 0 0 40px;
+}
+nav .nav-items li {
+  list-style: none;
+  padding: 0 15px;
+}
+nav .nav-items li a {
+  color: rgb(38, 118, 187);
+  font-size: 18px;
+  font-weight: 500;
+  text-decoration: none;
+}
+nav .nav-items li a:hover {
+  color: #ff3d00;
+}
+nav form {
+  display: flex;
+  height: 40px;
+  padding: 2px;
+  background: #1e232b;
+  min-width: 18% !important;
+  border-radius: 2px;
+  border: 1px solid rgba(155, 155, 155, 0.2);
+}
+nav form .search-data {
+  width: 100%;
+  height: 100%;
+  padding: 0 10px;
+  color: #fff;
+  font-size: 17px;
+  border: none;
+  font-weight: 500;
+  background: none;
+}
+nav form button {
+  padding: 0 15px;
+  color: #fff;
+  font-size: 17px;
+  background: #ff3d00;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+}
+nav form button:hover {
+  background: #e63600;
+}
+
+.menuhumb {
+  display: none;
+}
+
+@media (max-width: 425px) {
+  nav {
+    justify-content: space-around;
+  }
+
+  .logot {
+    font-size: 20px !important;
+  }
+
+  .menuhumb {
+    display: block;
+    font-size: 20px;
+  }
+
+  nav .nav-items {
+    display: none;
+  }
+  form {
+    width: 170px;
+    height: 30px;
+  }
+}
+
+
+/* nav {
   background: #ffffff;
   display: flex;
   flex-wrap: wrap;
@@ -112,7 +206,7 @@ nav form .search-data {
 }
 
 nav form button {
-  padding: 0 15px;
+  padding: 0px 15px;
   color: rgb(255, 255, 255);
   font-size: 17px;
 
@@ -267,7 +361,7 @@ nav .logo.space {
   color: blue;
   background-color: #ff3d00;
 }
-/* @media (max-width: 980px) {
+@media (max-width: 980px) {
   nav .menu-icon,
   nav .cancel-icon,
   nav .search-icon {
@@ -276,15 +370,15 @@ nav .logo.space {
   nav form {
     right: 30px;
   }
-} */
-/* @media (max-width: 350px) {
+} 
+@media (max-width: 350px) {
   nav .menu-icon,
   nav .cancel-icon,
   nav .search-icon {
     margin: 0 10px;
     font-size: 16px;
   }
-} */
+}
 .content {
   position: absolute;
   top: 50%;
@@ -301,4 +395,17 @@ nav .logo.space {
 }
 .content .space {
   margin: 10px 0;
+} */
+
+/* style titre iframe videochanel played 
+*/
+.titreVideo{
+  color: black;
+  font-size: 23px;
+
+}
+
+.main{
+  display: flex;
+
 }

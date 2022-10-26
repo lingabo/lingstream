@@ -45,9 +45,9 @@ const navigate = useNavigate()
         <div>
             <Navbar/>
         </div>
-      <div className="grid_sidebar_searchbar">
+      <div className="container">
       
-          <div className="image__preview image__container">
+          <div className="row">
             {!loading ? (
               videoFound?.map((item, id) => (
                 <Link

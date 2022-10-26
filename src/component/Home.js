@@ -17,19 +17,16 @@ function Home() {
   console.log("Main component : ", accessToken);
 
   useEffect(() => {
-
-    
     fetch(fecthData, {
       method: "GET",
       headers: {
         Authorization: `Bearer ${accessToken}`,
-        Accept: "application/json"
+        Accept: "application/json",
       },
     })
       .then((res) => res.json())
       .then((data) => setVideos(data.items));
   }, [fecthData]);
-
 
   console.log("videos : ", videos);
   return (
@@ -42,7 +39,7 @@ function Home() {
           {videos.map((item, id) => (
             <Link
               className="video__link__style"
-              to={`/videoplay/${item.id}`}
+              to={`/videoplay/${item.id}/${item?.snippet?.channelId}`}
               key={id}
             >
               <Cardvideo key={id} video={item} />

@@ -7,19 +7,18 @@ import moment from "moment/moment";
 import numeral from "numeral";
 
 export function VideoRead() {
+  const { videoId, channelId } = useParams();
+  const [videRealated, setVideorelated] = useState([]);
+  const [infoVideo, setInfovideo] = useState([]);
+  const [videoChannelInfos, setVideoChannelInfos] = useState([]);
 
-const { videoId,channelId } = useParams();
-const [videRealated,setVideorelated] = useState([])
-const [infoVideo, setInfovideo] = useState([])
-const [videoChannelInfos, setVideoChannelInfos] = useState([]);
-
-const key = "AIzaSyA82fnpCQ86CtAgV8qlgkgZdQtyI0mJfgU";
-//const fecthData = `https://youtube.googleapis.com/youtube/v3/search?part=snippet&relatedToVideoId=${videoId}&type=video&key=${key}`;
-const fetchRelated = ` https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=45&relatedToVideoId=${videoId}&type=video&key=${key}`;
-const fecthVideoById = `https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&id=${videoId}&maxResults=50&key=${key}`;
-const fetchChannelByVideo = `https://youtube.googleapis.com/youtube/v3/channels?part=snippet%2CcontentDetails%2Cstatistics&id=${channelId}&key=${key}`;
-//Adding the accessToken pour le comportement
-const accessToken = localStorage.getItem("token");
+  const key = "AIzaSyA82fnpCQ86CtAgV8qlgkgZdQtyI0mJfgU";
+  //const fecthData = `https://youtube.googleapis.com/youtube/v3/search?part=snippet&relatedToVideoId=${videoId}&type=video&key=${key}`;
+  const fetchRelated = ` https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=45&relatedToVideoId=${videoId}&type=video&key=${key}`;
+  const fecthVideoById = `https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&id=${videoId}&maxResults=50&key=${key}`;
+  const fetchChannelByVideo = `https://youtube.googleapis.com/youtube/v3/channels?part=snippet%2CcontentDetails%2Cstatistics&id=${channelId}&key=${key}`;
+  //Adding the accessToken pour le comportement
+  const accessToken = localStorage.getItem("token");
   useEffect(() => {
     fetch(fetchRelated, {
       method: "GET",
@@ -30,44 +29,38 @@ const accessToken = localStorage.getItem("token");
     })
       .then((res) => res.json())
       .then((data) => {
-
         setVideorelated(data.items);
-        console.log("tester 3",data.items)
-      }
-     );
-  }, [accessToken,videoId]);
+        console.log("tester 3", data.items);
+      });
+  }, [accessToken, videoId]);
 
   useEffect(() => {
     fetch(fecthVideoById, {
-     method: "GET",
+      method: "GET",
       headers: {
         Authorization: `Bearer ${accessToken}`,
-        Accept: "application/json"
+        Accept: "application/json",
       },
     })
       .then((result) => result.json())
       .then((data) => {
-
         setInfovideo(data?.items);
-      })
-      
+      });
   }, [accessToken, videoId]);
 
   useEffect(() => {
     fetch(fetchChannelByVideo, {
-     method: "GET",
+      method: "GET",
       headers: {
         Authorization: `Bearer ${accessToken}`,
-        Accept: "application/json"
+        Accept: "application/json",
       },
     })
       .then((result) => result.json())
       .then((data) => {
         setVideoChannelInfos(data?.items);
-        console.log("tester",data)
-        
-      })
-      
+        console.log("tester", data);
+      });
   }, [accessToken, videoId]);
 
   console.log("videos : ", videoChannelInfos);
@@ -78,6 +71,7 @@ const accessToken = localStorage.getItem("token");
       </div>
       <div className="container centerVideo">
         <div className="col-md-8">
+
           <iframe
             width="560"
             height="315"
@@ -85,12 +79,13 @@ const accessToken = localStorage.getItem("token");
             title="YouTube video player"
             allowFullScreen="allowFullScreen"
           ></iframe>
-        </div>
-        <div>
+
+
+        
           <div>
             {infoVideo?.map((item, id) => (
               <div key={id}>
-                <p className="video__title">{item?.snippet?.title}</p>
+                <p className="titreVideo">{item?.snippet?.title}</p>
 
                 <div className="video__infos">
                   <div className="comment__infos">
@@ -111,7 +106,6 @@ const accessToken = localStorage.getItem("token");
               </div>
             ))}
           </div>
-        </div>
         <div>
           {videoChannelInfos.map((item, id) => {
             const channelId = item.id;
@@ -124,33 +118,34 @@ const accessToken = localStorage.getItem("token");
                 <div className="channel__info__container">
                   <div className="channel__image">
                     <img
-                      className="image__channel"
+                      className="img-circle" width="10%"
                       src={item.snippet.thumbnails["medium"]["url"]}
                       alt=""
                     />
                   </div>
-                  <p className="channel__text">{item.snippet.title}</p>
+                  <p className="textchaine">{item.snippet.title}</p>
                 </div>
               </Link>
             );
           })}
         </div>
-      
-      <div className="col-md-4">
-        <div className="row">
-          {videRealated.map((item, id) => (
-            <link
-              className=""
-              to={`/videoplay/${item.id.videoId}/${item?.snippet?.channelId}`}
-              key={id}
-            >
-              <Cardvideo key={id} video={item} />
-            </link>
-          ))}
+        </div>
+        
+
+        <div className="col-md-4 main">
+          <div className="row">
+            {videRealated.map((item, id) => (
+              <Link
+                className=""
+                to={`/videoplay/${item.id.videoId}/${item?.snippet?.channelId}`}
+                key={id}
+              >
+                <Cardvideo key={id} video={item} />
+              </Link>
+            ))}
+          </div>
         </div>
       </div>
-      </div>
-      
     </>
   );
 }
