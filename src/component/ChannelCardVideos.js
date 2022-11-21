@@ -28,7 +28,7 @@ const ChannelCardVideos = () => {
 
   console.log("videdos abonnées : ", video);
   return (
-    <div className="row row-cols-1 row-cols-sm-4 row-cols-md-4 justify-content-center">
+    <div className="listCard">
       {video?.map(
         (item, id) => (
           <Link

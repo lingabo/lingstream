@@ -13,7 +13,7 @@ export function VideoRead() {
   const [videoChannelInfos, setVideoChannelInfos] = useState([]);
 
   const key = "AIzaSyA82fnpCQ86CtAgV8qlgkgZdQtyI0mJfgU";
-  //const fecthData = `https://youtube.googleapis.com/youtube/v3/search?part=snippet&relatedToVideoId=${videoId}&type=video&key=${key}`;
+
   const fetchRelated = ` https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=45&relatedToVideoId=${videoId}&type=video&key=${key}`;
   const fecthVideoById = `https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&id=${videoId}&maxResults=50&key=${key}`;
   const fetchChannelByVideo = `https://youtube.googleapis.com/youtube/v3/channels?part=snippet%2CcontentDetails%2Cstatistics&id=${channelId}&key=${key}`;
@@ -69,8 +69,12 @@ export function VideoRead() {
       <div>
         <Navbar />
       </div>
-      <div className="container centerVideo">
-        <div className="col-md-8">
+
+      <div className="ParentLecture">
+
+        <div className="LecturePage">
+
+          <section id="videoSection">
 
           <iframe
             width="560"
@@ -79,9 +83,6 @@ export function VideoRead() {
             title="YouTube video player"
             allowFullScreen="allowFullScreen"
           ></iframe>
-
-
-        
           <div>
             {infoVideo?.map((item, id) => (
               <div key={id}>
@@ -106,34 +107,36 @@ export function VideoRead() {
               </div>
             ))}
           </div>
-        <div>
-          {videoChannelInfos.map((item, id) => {
-            const channelId = item.id;
-            return (
-              <Link
-                to={`/chanelVideosPage/${channelId}`}
-                className="channel__link"
-                key={id}
-              >
-                <div className="channel__info__container">
-                  <div className="channel__image">
-                    <img
-                      className="img-circle" width="10%"
-                      src={item.snippet.thumbnails["medium"]["url"]}
-                      alt=""
-                    />
+          <div>
+            {videoChannelInfos.map((item, id) => {
+              const channelId = item.id;
+              return (
+                <Link
+                  to={`/chanelVideosPage/${channelId}`}
+                  className="channel__link"
+                  key={id}
+                >
+                  <div className="channel__info__container">
+                    <div className="channel__image">
+                      <img
+                        className="img-circle"
+                        width="10%"
+                        src={item.snippet.thumbnails["medium"]["url"]}
+                        alt=""
+                      />
+                    </div>
+                    <p className="textchaine">{item.snippet.title}</p>
                   </div>
-                  <p className="textchaine">{item.snippet.title}</p>
-                </div>
-              </Link>
-            );
-          })}
-        </div>
-        </div>
+                </Link>
+              );
+            })}
+          </div>
+          </section>
         
+        
+        <div className="RelatedVideo scrollBar">
 
-        <div className="col-md-4 main">
-          <div className="row">
+          
             {videRealated.map((item, id) => (
               <Link
                 className=""
@@ -143,7 +146,8 @@ export function VideoRead() {
                 <Cardvideo key={id} video={item} />
               </Link>
             ))}
-          </div>
+          
+        </div>
         </div>
       </div>
     </>

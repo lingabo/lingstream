@@ -1,9 +1,10 @@
 import "../App.css";
-import logo from "./assets/images/logo.png";
+import logoo from "./assets/images/logo.png";
 import { GoogleLogin } from "react-google-login";
 import { gapi } from "gapi-script";
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { render } from "@testing-library/react";
 
 function Login() {
   const clientId =
@@ -43,13 +44,26 @@ function Login() {
   return (
     <div className="main">
       <div className="header-logo">
-        <h1 className="text">Lingstream</h1>
-        <img src={logo} alt="LingSt-Logo" className="logo" />
-        <p>Une application qui vous permet de faire du streaming</p>
+        <img src={logoo} alt="LingSt-Logo" className="logoo" />
+        <h1 className="text">
+          {" "}
+          <b style={{ color: "#32AEE3" }}>Ling</b>Stream
+        </h1>
+        <p className="pcenter">Streaming in your hands</p>
         <div id="login">
           {/* 861476027861-544a7k37qnckg7mnltohcl885b53nl0t.apps.googleusercontent.com */}
           <GoogleLogin
             clientId="861476027861-544a7k37qnckg7mnltohcl885b53nl0t.apps.googleusercontent.com"
+            render={(renderProps) => (
+              <button
+                className="btn-login"
+                onClick={renderProps.onClick}
+                disabled={renderProps.disabled}
+              >
+                <i className="fa fa-google google-icon"></i> Login with your
+                google account
+              </button>
+            )}
             buttonText="Se connecter avec son compte Google"
             onSuccess={onSuccess}
             cookiePolicy={"single_host_origin"}

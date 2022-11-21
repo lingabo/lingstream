@@ -1,13 +1,14 @@
 import React from "react";
+import logo from "../component/assets/images/loaderspin.gif";
 
 
 export function Loarding(){
 
 
     return (
-        <div className="">
+        <div className="loaderposition">
 
-            Loading ...
+            <img className="spinloader" src={logo}/>
         </div>
     )
 }

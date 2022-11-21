@@ -1,0 +1,19 @@
+.containerFooter{
+    display: flex;
+    align-items: center;
+    background-color: black;
+    height: 130px;
+    
+}
+
+.rowFooter{
+
+    color: #fff;
+     width: 90%;
+    
+}
+
+.logo{
+    width: 5%;
+}
+

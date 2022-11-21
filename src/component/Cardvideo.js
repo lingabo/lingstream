@@ -1,13 +1,10 @@
 import React from "react";
 
+export function Cardvideo({ video }) {
+  const chanelImage = localStorage.getItem("token");
 
-export function Cardvideo({video}){
-
-const chanelImage = localStorage.getItem('token');
-
-return (
-  <div>
-    <div className="container">
+  return (
+    <div className="container_cards">
       <div className="row padd">
         <img
           className="image"
@@ -15,12 +12,7 @@ return (
           alt="image video"
         />
         <p className="video__title">{video?.snippet?.title}</p>
-        
       </div>
-
-      
     </div>
-  </div>
-);
-
+  );
 }

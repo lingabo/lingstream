@@ -10,11 +10,8 @@ const ChanelVideosPage = () => {
         <Navbar />
       </div>
 
-      <div className="container">
-
-   
+      <div className="Parentcontainer">
         <ChannelCardVideos />
-      
       </div>
     </>
   );

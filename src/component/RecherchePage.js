@@ -16,7 +16,7 @@ const navigate = useNavigate()
    const key = "AIzaSyA82fnpCQ86CtAgV8qlgkgZdQtyI0mJfgU";
    const accessToken = localStorage.getItem('token')
    const [loading, setLoading] = useState(true)
-   const [error, setError] = useState(false)
+   
 
   const fectData = () => {
     axios
@@ -45,9 +45,9 @@ const navigate = useNavigate()
         <div>
             <Navbar/>
         </div>
-      <div className="container">
+      <div className="Parentsearch">
       
-          <div className="row">
+          <div className="searchcard">
             {!loading ? (
               videoFound?.map((item, id) => (
                 <Link

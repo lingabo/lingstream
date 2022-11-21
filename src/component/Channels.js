@@ -2,9 +2,12 @@ import React from 'react'
 import Navbar from './Navbar'
 import { Channelvideo } from './Channelvideo'
 
+import { Footer } from './Footer'
+
 import { useEffect, useState } from 'react'
 
 import { Link } from 'react-router-dom'
+import { Cardvideo } from './Cardvideo'
 const Channels = () => {
  
    const [videos, setVideos] = useState([])
@@ -24,30 +27,29 @@ const Channels = () => {
    console.log('videxos abonnées : ', videos)
    return (
      <>
-       <div>
          <Navbar />
-         <div>
-
-           <div className="container videochanel">
-             <div className="row row-cols-1 row-cols-sm-4 row-cols-md-4 justify-content-center">
-            
-                 {videos.map((item, id) => {
-                   const channelId = item.snippet.resourceId.channelId;
-                   return (
-                     <Link
-                       className="video__link__style"
-                       to={`/chanelVideosPage/${channelId}`}
-                       key={id}
-                     >
-                       <Channelvideo key={id} video={item} />
-                     </Link>
-                   );
-                 })}
-               
+         
+           <div className="Parentcontainer">
+             <div className="listCard">
+               {videos.map((item, id) => {
+                 const channelId = item.snippet.resourceId.channelId;
+                 return (
+                   <Link
+                     className="video__link__style"
+                     to={`/chanelVideosPage/${channelId}`}
+                     key={id}
+                   >
+                     <Cardvideo key={id} video={item} />
+                   </Link>
+                 );
+               })}
              </div>
            </div>
-         </div>
-       </div>
+
+           <Footer/>
+
+       
+       
      </>
    );
 }
