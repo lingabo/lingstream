@@ -8,9 +8,6 @@
 }
 body {
   background: #deefef;
- 
-  
- 
 }
 
 .main {
@@ -97,58 +94,6 @@ body {
   text-align: center;
   color: rgb(0, 0, 0);
 }
-.Parentcontainer {
-  
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-
-}
-.container_cards {
-  display: flex;
-  justify-content: space-between;
-  width: 250px;
-}
-.Parentsearch{
-
-  display: flex;
-  justify-content: center;
-  align-items:flex-end;
-}
-.fa-search{
-    background: transparent;
-  opacity: 1;
- color: rgb(30, 103, 237);
-
-}
-.searchcard{
-  padding-top: 100px;
-  display: flex;
-  flex-wrap:wrap;
-  gap: 30px;
-  justify-content: center;
-  align-items: right;
-  width: 100%;
-}
-
-.listCard {
-  padding-top: 90px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 30px;
-  justify-content: center;
-  align-items: center;
-  width: 90%;
-}
-.container_cards img {
-  object-fit: cover;
-  width: 100%;
-}
-
-.centerVideo {
-  position: relative;
-  top: 100px;
-}
 
 .header {
   background-color: #32aee3;
@@ -191,43 +136,10 @@ nav .nav-items li a {
   font-size: 17px;
   font-weight: 500;
   text-decoration: none;
+  margin: 10px;
 }
 nav .nav-items li a:hover {
   color: #3cd3ee;
-}
-nav form {
-  display: flex;
-  height: 35px;
-  padding: 5px;
-  background: #1e232b;
-  min-width: 18% !important;
-  border-radius: 110px;
- 
-}
-nav form .search-data {
-  width: 100%;
-  height: 100%;
-  padding: 0 11px;
-  color: #fff;
-  font-size: 17px;
-  border: none;
-  font-weight: 500;
-  background: none;
-}
-nav form button {
-  padding: 0 15px;
-
-  font-size: 17px;
-  /* background: #ff3d00; */
-  border: none;
-  border-radius: 2px;
-  cursor: pointer;
-}
-nav form button:hover {
-  color: #1ba2ba;
-}
-.menuhumb {
-  display: none;
 }
 
 @media (max-width: 425px) {
@@ -247,12 +159,14 @@ nav form button:hover {
     padding-top: 80px;
     height: 200px;
     width: 500px;
-    background-color: #a5e2df;
+    background-color: #010303;
   }
 
   nav .nav-items {
     display: none;
   }
+ 
+
   form {
     width: 170px;
     height: 30px;
@@ -273,10 +187,28 @@ nav form button:hover {
 
 
 .titreVideo {
-  color: black;
-  font-size: 90%;
-  font-weight: 400;
+  color: rgb(0, 0, 0);
+  font-size: 100%;
+  padding: 10px;
 }
+.infoVideo{
+  display: flex;
+  gap:30px;
+  padding-bottom: 20px;
+}
+.channel__info__container{
+  display: flex;
+  align-items: flex-start;
+ 
+  
+}
+.textchaine{
+  position: relative;
+  right:190px;
+}
+ .img-circle{
+    border-radius: 100px;
+  }
 
 iframe {
    width: 128vh;
@@ -297,6 +229,3 @@ iframe {
    margin: 0 9.4%;
 }
 
-.SearchPage{
-   height: 100vh;
-}
