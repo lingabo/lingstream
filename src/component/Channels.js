@@ -1,13 +1,13 @@
 import React from 'react'
 import Navbar from './Navbar'
-import { Channelvideo } from './Channelvideo'
+
 
 import { Footer } from './Footer'
 
-import { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react';
 
-import { Link } from 'react-router-dom'
-import { Cardvideo } from './Cardvideo'
+import { Link } from 'react-router-dom';
+import { Cardvideo } from './Cardvideo';
 const Channels = () => {
  
    const [videos, setVideos] = useState([])
@@ -24,7 +24,7 @@ const Channels = () => {
        .then((res) => res.json())
        .then((data) => setVideos(data.items));
    }, [accessToken]);
-   console.log('videxos abonnées : ', videos)
+   
    return (
      <>
          <Navbar />

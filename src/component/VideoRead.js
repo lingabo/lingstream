@@ -5,6 +5,7 @@ import { Cardvideo } from "./Cardvideo";
 import Navbar from "./Navbar";
 import moment from "moment/moment";
 import numeral from "numeral";
+import Comments from "./Comments";
 
 export function VideoRead() {
   const { videoId, channelId } = useParams();
@@ -71,72 +72,73 @@ export function VideoRead() {
       </div>
 
       <div className="ParentLecture">
-
         <div className="LecturePage">
-
           <section id="videoSection">
+            <iframe
+              width="560"
+              height="315"
+              src={`https://www.youtube.com/embed/${videoId}`}
+              title="YouTube video player"
+              allowFullScreen="allowFullScreen"
+            ></iframe>
+            <div>
+              {infoVideo?.map((item, id) => (
+                <div key={id}>
+                  <p className="titreVideo">{item?.snippet?.title}</p>
 
-          <iframe
-            width="560"
-            height="315"
-            src={`https://www.youtube.com/embed/${videoId}`}
-            title="YouTube video player"
-            allowFullScreen="allowFullScreen"
-          ></iframe>
-          <div>
-            {infoVideo?.map((item, id) => (
-              <div key={id}>
-                <p className="titreVideo">{item?.snippet?.title}</p>
-
-                <div className="video__infos">
-                  <div className="comment__infos">
-                    {numeral(item?.statistics?.viewCount).format("O.a")} views
-                  </div>
-                  <div className="comment__infos">
-                    <i className="fa-solid fa-thumbs-up"></i>{" "}
-                    {numeral(item?.statistics?.likeCount).format("O.a")}
-                  </div>
-                  <div className="comment__infos">
-                    Comments :{" "}
-                    {numeral(item?.statistics?.commentCount).format("O.a")}
-                  </div>
-                  <div className="comment__infos">
-                    Published : {moment(item?.snippet?.publishedAt).fromNow()}
+                  <div className="infoVideo">
+                    <div className="comment__infos">
+                      <i className="fa-solid fa-thumbs-up"></i>{" "}
+                      {numeral(item?.statistics?.likeCount).format("O.a")}
+                    </div>
+                    <div className="comment__infos">
+                      Comments :{" "}
+                      {numeral(item?.statistics?.commentCount).format("O.a")}
+                   
+                     
+                    </div>
+                    <div className="comment__infos">
+                      Published : {moment(item?.snippet?.publishedAt).fromNow()}
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
-          </div>
-          <div>
-            {videoChannelInfos.map((item, id) => {
-              const channelId = item.id;
-              return (
-                <Link
-                  to={`/chanelVideosPage/${channelId}`}
-                  className="channel__link"
-                  key={id}
-                >
-                  <div className="channel__info__container">
-                    <div className="channel__image">
-                      <img
-                        className="img-circle"
-                        width="10%"
-                        src={item.snippet.thumbnails["medium"]["url"]}
-                        alt=""
-                      />
-                    </div>
-                    <p className="textchaine">{item.snippet.title}</p>
-                  </div>
-                </Link>
-              );
-            })}
-          </div>
-          </section>
-        
-        
-        <div className="RelatedVideo scrollBar">
+              ))}
+            </div>
+            <div>
+              {videoChannelInfos.map((item, id) => {
+                const channelId = item.id;
+                return (
+                  <>
+                    <Link
+                      to={`/chanelVideosPage/${channelId}`}
+                      className="channel__link"
+                      key={id}
+                    >
+                      <div className="channel__info__container">
+                        <div className="channel__image">
+                          <img
+                            className="img-circle"
+                            width="15%"
+                            src={item.snippet.thumbnails["medium"]["url"]}
+                            alt=""
+                          />
+                        </div>
 
-          
+                        <p className="textchaine">{item.snippet.title}</p>
+                      </div>
+                    </Link>
+                    <div className="comment__infos">
+                      {numeral(item?.statistics?.viewCount).format("O.a")} views
+                    </div>
+                  </>
+                );
+              })}
+            </div>
+
+            <Comments />
+          </section>
+
+          <div className="RelatedVideo scrollBar">
             {videRealated.map((item, id) => (
               <Link
                 className=""
@@ -146,8 +148,7 @@ export function VideoRead() {
                 <Cardvideo key={id} video={item} />
               </Link>
             ))}
-          
-        </div>
+          </div>
         </div>
       </div>
     </>

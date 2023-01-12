@@ -1,0 +1,68 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik&display=swap");
+
+* {
+  font-family: "Rubik", sans-serif !important;
+}
+
+.container {
+  width: 130px;
+  height: 360px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 80px 10 0 0;
+  flex-direction: column;
+}
+
+.dropdown {
+  min-width: 9px;
+}
+
+.dropdown-button {
+  background: #434343;
+ 
+  
+
+  font-size: 18px;
+  line-height: 24px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  color: #ffffff;
+ 
+}
+
+    .dropdown-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+    }
+
+.dropdown-menu-list {
+  background: #434343;
+  border: 2px solid #000000;
+  border-radius: 8px;
+  padding: 8px;
+    margin-top: 150px;
+}
+
+.dropdown-menu-item {
+  padding: 6px 8px;
+  border-radius: 4px;
+  transition: all 0.2s ease-in-out;
+  color: #ffffff;
+
+}
+
+.dropdown-menu-item:not(:last-child) {
+  margin-bottom: 4px;
+}
+
+.dropdown-menu-item:hover {
+  background: #cad2d7;
+  color: #385da7;
+  cursor: pointer;
+}

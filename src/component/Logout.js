@@ -10,7 +10,7 @@ const clientId =
 const Logout = () => {
   const navigate = useNavigate();
   const onSucces = () => {
-    console.log("Logout Successfully");
+   
     navigate("/");
     localStorage.removeItem("item");
     localStorage.removeItem("token");

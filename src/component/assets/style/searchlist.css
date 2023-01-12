@@ -1,0 +1,89 @@
+nav .form {
+  display: flex;
+  height: 35px;
+  padding: 5px;
+  background: #1e232b;
+  min-width: 18% !important;
+  border-radius: 110px;
+ 
+}
+nav .form .search-data {
+  width: 100%;
+  height: 100%;
+  padding: 0 11px;
+  color: #fff;
+  font-size: 17px;
+  border: none;
+  font-weight: 500;
+  background: none;
+}
+nav .form button {
+  padding: 0 15px;
+
+  font-size: 17px;
+  /* background: #ff3d00; */
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+}
+nav .form button:hover {
+  color: #1ba2ba;
+}
+.menuhumb {
+  display: none;
+}
+.SearchPage{
+   height: 100vh;
+}
+.Parentcontainer {
+  
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+
+}
+.container_cards {
+  display: flex;
+  justify-content: space-between;
+  width: 250px;
+}
+.Parentsearch{
+
+  display: flex;
+  justify-content: center;
+  align-items:flex-end;
+}
+.fa-search{
+    background: transparent;
+  opacity: 1;
+ color: rgb(30, 103, 237);
+
+}
+.searchcard{
+  padding-top: 100px;
+  display: flex;
+  flex-wrap:wrap;
+  gap: 30px;
+  justify-content: center;
+  align-items: right;
+  width: 100%;
+}
+
+.listCard {
+  padding-top: 90px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+}
+.container_cards img {
+  object-fit: cover;
+  width: 100%;
+}
+
+.centerVideo {
+  position: relative;
+  top: 100px;
+}
