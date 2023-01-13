@@ -1,3 +1,4 @@
+import React from "react";
 import { useEffect, useState } from "react";
 import { Cardvideo } from "./Cardvideo";
 import { Link } from "react-router-dom";
@@ -6,9 +7,7 @@ import { Loarding } from "./Loading";
 import { Footer } from "./Footer";
 
 function Home() {
-  //434501052002-0ra8d1qvse4bld75lch1jluo3sku62er.apps.googleusercontent.com : client id
-  //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 : your client secret
-  //state
+ 
   const [videos, setVideos] = useState([]);
    const [loading, setLoading] = useState(true);
 
@@ -33,7 +32,7 @@ function Home() {
 
   }, [fecthData]);
 
-  console.log("videos : ", videos);
+  
   return (
     <>
       <div>

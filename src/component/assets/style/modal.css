@@ -1,0 +1,81 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.backshow{
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color:rgba(0,0,0,0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.backshow .modal{
+    width: 500px;
+    height: 450px;
+    background-color: #DEEFEF;
+    position: relative;
+    text-align: center;
+    padding: 30px;
+
+
+}
+.delete-icon{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color:blue;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 13px;
+    cursor: pointer;
+    position: absolute;
+    top: -15px;
+    right: -15px;
+}
+.delete-icon:hover{
+    color:rgb(0, 0, 0);
+}
+.form-group{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding-top: 30px; 
+}
+.form-control{
+    display: flex;
+     flex-direction: row;
+    justify-content: space-between;
+    width: 45%;
+    height: 40px;
+    border: none;
+    text-indent: 10px;
+  
+ 
+}
+
+.buttonModif{
+    width: 30%;
+    height: 45px;
+    background-color:#0E91C9;
+    color: #fff;
+    border-radius: 9px;
+    border: none;
+}
+.buttonCancel{
+     width: 30%;
+    height: 45px;
+    background: #000000;
+    border-radius: 9px;
+    color: #fff;
+    border: none;
+}
